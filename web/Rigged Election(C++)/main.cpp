@@ -34,8 +34,6 @@
     
     char normalHeader[1000];
     
-    ofstream outR("resp.gz");
-    ofstream fout("Much DB such wow.txt");
     ifstream fin("header.in");
     //Create a Socket for server communication
     short SocketCreate(void)
@@ -155,7 +153,6 @@
           len++;
           for(int j=0;j<len;j++)
             c[j]=0;
-      //    printf("%d\n",len);
         }
         for(int j=0;j<len;j++)
           c2[j]=letters[c[j]];
