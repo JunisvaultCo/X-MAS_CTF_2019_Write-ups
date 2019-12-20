@@ -8,6 +8,6 @@ Well, that wasn't all. Once I did that, I ran into a beautiful "Great! You did i
 myself again why the challenge is named "Function Plotter". I thought, f(x,y)=1 if the point is actually plotted, and
 f(x,y)=0 if it isn't.
 I outputted the matrix. I couldn't see a pattern, so I decided to make the 1s and 0s more distinct. # for 1 and _ for 0.
-This revealed a QR code, which I simply decoded at https://zxing.org/w/decode.jspx , which turned out to reveal the flag:
+This revealed a QR code. Since it wasn't yet in a good enough shape, I wrote a Java program, as I wasn't accustomed enough to graphics in C++, writting the QR code in an actual image, which I simply decoded at https://zxing.org/w/decode.jspx , which turned out to reveal the flag:
 
 X-MAS{Th@t's_4_w31rD_fUnCt10n!!!_8082838205}
