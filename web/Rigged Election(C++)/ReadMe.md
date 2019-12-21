@@ -38,4 +38,6 @@ connect again. I wasn't able to find a way to get a gzip decrypter working prope
 It's also a good idea to make the thread sleep for a short while before sending a new request, so as to not overwhelm the
 server and to expect that sometimes the server may just be unavailable when the request is sent, so as to make code that
 doesn't count when that happens(I've forgotten to some level to do that when I send the string, but running it two times
-should do the trick if it misses some due to the server being unavailable).
+should do the trick if it misses some due to the server being unavailable). In order to optimise looking up a hash to see
+if it's in the database or not, I transformed the hex into decimal and used a frequency vector named has that would work
+this way: has\[hash]=1 if it's in the database, has\[hash]=0 if it isn't
