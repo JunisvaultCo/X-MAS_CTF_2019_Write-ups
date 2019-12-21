@@ -34,8 +34,6 @@
     
     char normalHeader[1000];
     
-    ofstream outR("resp.gz");
-    ofstream fout("Much DB such wow.txt");
     ifstream fin("header.in");
     //Create a Socket for server communication
     short SocketCreate(void)
