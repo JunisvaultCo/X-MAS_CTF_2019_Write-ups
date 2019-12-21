@@ -2,11 +2,10 @@ First, I opened the Inspect Element tool on Mozilla and checked out the Inspecto
 of importance: md5.js(which implemented the MD5 hash) and index.js(which implemented the voting code). I hoped that I would
 find an easy way to bypass the CPU-intensive task... However, it turned out that the CPU-intensive task was absolutely
 necessary. The index.js file did the following:
--it requested a "work" that was a string made from 6 hexadecimal letters from /vote.php?g=1.
--it then tried to search for a string of length from 7 to 24 made from big and small alpha-numeric characters, such that when
-it was added at the end of the "watch__bisqwit__" string it would give a MD5 hash that started with the work(the string that
+<br>-it requested a "work" that was a string made from 6 hexadecimal letters from /vote.php?g=1.
+<br>-it then tried to search for a string of length from 7 to 24 made from big and small alpha-numeric characters, such that when it was added at the end of the "watch__bisqwit__" string it would give a MD5 hash that started with the work(the string that
 was given by the server earlier)
--finally, it sent the request to register the vote at /vote.php, passing the arguments id for the id of the suggestion, h for
+<br>-finally, it sent the request to register the vote at /vote.php, passing the arguments id for the id of the suggestion, h for
 the found string and u, where u was 1 if it was upvoted or 0 if it was downvoted.
 This whole process takes, I'd say, 5-10 mins. For 250 requests, it would surely be a long wait. The authors said, however,
 that the intended solution was meant to be done within minutes.
