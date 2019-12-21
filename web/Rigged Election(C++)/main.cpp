@@ -34,6 +34,8 @@
     
     char normalHeader[1000];
     
+    ofstream outR("resp.gz");
+    ofstream fout("Much DB such wow.txt");
     ifstream fin("header.in");
     //Create a Socket for server communication
     short SocketCreate(void)
@@ -83,7 +85,7 @@
             return -1;
         }
         shortRetval = recv(hSocket, Rsp, RvcSize, 0);
-      //  printf("%s",Rsp);
+        printf("%s",Rsp);
         return shortRetval;
     }
     
@@ -153,6 +155,7 @@
           len++;
           for(int j=0;j<len;j++)
             c[j]=0;
+      //    printf("%d\n",len);
         }
         for(int j=0;j<len;j++)
           c2[j]=letters[c[j]];
@@ -198,7 +201,7 @@
         char p_response[50000]={0};
         char target[7];
         char p_resourcepath1[]="/vote.php?g=1";
-        char p_resourcepath2[]="/vote.php?id=837&u=1&h=";
+        char p_resourcepath2[]="/vote.php?id=9&u=1&h=";
         sprintf(p_request, "GET %s HTTP/1.1\r\n", p_resourcepath1);
         strcat(p_request,normalHeader);
         SocketSend(hSocket, p_request, strlen(p_request));
@@ -228,6 +231,7 @@
           strcat(p_request,normalHeader);
           SocketSend(hSocket, p_request, strlen(p_request));
           SocketReceive(hSocket, p_response, 50000);
+          
         }
         else
         {
@@ -238,7 +242,7 @@
           SocketReceive(hSocket, p_response, 50000);
         }
         printf("i:%d\n",i);
-        std::this_thread::sleep_for(250ms);
+        std::this_thread::sleep_for(300ms);
       }
  
       return 0;
