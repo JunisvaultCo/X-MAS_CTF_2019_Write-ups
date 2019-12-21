@@ -37,4 +37,5 @@ empty response and the only way to stop it from sending back yet another empty r
 connect again. I wasn't able to find a way to get a gzip decrypter working properly, so I simply asked the server for text.
 It's also a good idea to make the thread sleep for a short while before sending a new request, so as to not overwhelm the
 server and to expect that sometimes the server may just be unavailable when the request is sent, so as to make code that
-doesn't count when that happens.
+doesn't count when that happens(I've forgotten to some level to do that when I send the string, but running it two times
+should do the trick if it misses some due to the server being unavailable).
